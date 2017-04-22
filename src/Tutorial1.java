@@ -8,16 +8,15 @@ public class Tutorial1 {
 
 	public static void main(String[] args) {
 		Connection conn = DBUtil.open();
-		String sql = "select id,name,email from Tbl1 ";
+		String sql = "select candidate_id,skill_id from candidate_skills; ";
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet res = stmt.executeQuery(sql);
 			// cursor
 			while(res.next()){
-				int id = res.getInt(1);
-				String name = res.getString(2);
-				String email = res.getString(3);
-				System.out.println(id+","+name+","+email);
+				int candidate_id = res.getInt(1);
+				int skill_id = res.getInt(2);
+				System.out.println(candidate_id+","+skill_id);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

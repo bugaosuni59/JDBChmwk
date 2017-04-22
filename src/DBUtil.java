@@ -24,8 +24,8 @@ public class DBUtil {
 		driver = prop.getProperty("driver");
 		url = prop.getProperty("url");
 		username = prop.getProperty("username");
-//		password = prop.getProperty("password");
-		password = "";
+		password = prop.getProperty("password");
+//		password = "";
 	}
 	public static Connection open(){
 		try {
